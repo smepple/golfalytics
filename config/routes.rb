@@ -1,6 +1,13 @@
 Golfalytics::Application.routes.draw do
-  
-  root to: "static_pages#home"
+
+  root to: 'static_pages#home'
+
+  get 'signup', to: 'users#new', as: 'signup'
+  get 'signin', to: 'sessions#new', as: 'signin'
+  get 'signout', to: 'sessions#destroy', as: 'signout'
+
+  resources :users
+  resources :sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

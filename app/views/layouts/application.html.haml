@@ -7,4 +7,18 @@
     = csrf_meta_tags
   
   %body
-    = yield
+
+    .header
+      = link_to "Home", root_path
+      - if current_user
+        = current_user.email
+        = link_to "Sign out", signout_path
+      - else
+        = link_to "Sign in", signin_path
+        = link_to "Sign up", signup_path
+
+    - flash.each do |name, msg|
+      .flash_messages
+        = content_tag :div, msg, class: "flash_#{name}"
+    .main
+      = yield
