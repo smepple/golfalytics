@@ -22,3 +22,5 @@
         = content_tag :div, msg, class: "flash_#{name}"
     .main
       = yield
+    .footer
+      = link_to "Admin", admin_root_path
