@@ -13,4 +13,6 @@
 
 class Venue < ActiveRecord::Base
   attr_accessible :city, :name, :state, :website
+
+  has_many :facilities
 end
