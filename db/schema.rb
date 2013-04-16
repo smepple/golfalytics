@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415111432) do
+ActiveRecord::Schema.define(:version => 20130416103938) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -53,6 +53,37 @@ ActiveRecord::Schema.define(:version => 20130415111432) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "venue_id"
+  end
+
+  create_table "holes", :force => true do |t|
+    t.integer  "tee_id"
+    t.integer  "number"
+    t.integer  "par_men"
+    t.integer  "par_women"
+    t.integer  "handicap_men"
+    t.integer  "handicap_women"
+    t.integer  "length"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "tees", :force => true do |t|
+    t.integer  "facility_id"
+    t.string   "name"
+    t.decimal  "rating_men"
+    t.decimal  "rating_front_men"
+    t.decimal  "rating_back_men"
+    t.integer  "slope_men"
+    t.integer  "slope_front_men"
+    t.integer  "slope_back_men"
+    t.decimal  "rating_women"
+    t.decimal  "rating_front_women"
+    t.decimal  "rating_back_women"
+    t.integer  "slope_women"
+    t.integer  "slope_front_women"
+    t.integer  "slope_back_women"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "users", :force => true do |t|

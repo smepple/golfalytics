@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: holes
+#
+#  id             :integer          not null, primary key
+#  tee_id         :integer
+#  number         :integer
+#  par_men        :integer
+#  par_women      :integer
+#  handicap_men   :integer
+#  handicap_women :integer
+#  length         :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tee_id: 1
+  number: 1
+  par_men: 1
+  par_women: 1
+  handicap_men: 1
+  handicap_women: 1
+  length: 1
+
+two:
+  tee_id: 1
+  number: 1
+  par_men: 1
+  par_women: 1
+  handicap_men: 1
+  handicap_women: 1
+  length: 1

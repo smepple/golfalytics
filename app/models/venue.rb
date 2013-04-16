@@ -14,5 +14,7 @@
 class Venue < ActiveRecord::Base
   attr_accessible :city, :name, :state, :website
 
-  has_many :facilities
+  has_many :facilities, dependent: :destroy
+
+  validates_presence_of :name
 end
