@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130419150354) do
+ActiveRecord::Schema.define(:version => 20130419152839) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -74,6 +74,31 @@ ActiveRecord::Schema.define(:version => 20130419150354) do
     t.integer  "length"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "played_holes", :force => true do |t|
+    t.integer  "round_id"
+    t.integer  "hole_number"
+    t.integer  "strokes"
+    t.string   "club_off_tee"
+    t.integer  "tee_shot_distance"
+    t.string   "fairway"
+    t.boolean  "clear_approach"
+    t.string   "approach_club"
+    t.integer  "approach_distance"
+    t.string   "approach"
+    t.integer  "approach_miss_distance"
+    t.integer  "chips"
+    t.integer  "sand_shots"
+    t.boolean  "up_and_down"
+    t.boolean  "sand_save"
+    t.integer  "putts"
+    t.integer  "first_putt_distance"
+    t.integer  "made_putt_distance"
+    t.integer  "penalties"
+    t.integer  "stroke_and_distance_penalties"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "rounds", :force => true do |t|

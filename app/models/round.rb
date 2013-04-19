@@ -16,6 +16,7 @@ class Round < ActiveRecord::Base
 
   belongs_to :activity
   belongs_to :tee
+  has_many :played_holes
 
   validates_presence_of :activity_id, :tee_id, :round_type
 end
