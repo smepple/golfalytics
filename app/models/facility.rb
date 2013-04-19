@@ -16,6 +16,7 @@ class Facility < ActiveRecord::Base
 
   belongs_to :venue
   has_many :tees, dependent: :destroy
+  has_many :activities
 
   validates_presence_of :venue_id
 end

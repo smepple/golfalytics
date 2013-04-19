@@ -25,7 +25,7 @@ class Tee < ActiveRecord::Base
   attr_accessible :facility_id, :name, :rating_back_men, :rating_back_women, :rating_front_men, :rating_front_women, :rating_men, :rating_women, :slope_back_men, :slope_back_women, :slope_front_men, :slope_front_women, :slope_men, :slope_women
 
   belongs_to :facility
-  has_many :holes
+  has_many :holes, dependent: :destroy
 
   validates_presence_of :facility_id, :name
 end
