@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: rounds
+#
+#  id          :integer          not null, primary key
+#  activity_id :integer
+#  tee_id      :integer
+#  round_type  :string(255)
+#  strokes     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  activity_id: 1
+  tee_id: 1
+  round_type: MyString
+  strokes: 1
+
+two:
+  activity_id: 1
+  tee_id: 1
+  round_type: MyString
+  strokes: 1

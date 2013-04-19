@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130417015103) do
+ActiveRecord::Schema.define(:version => 20130419150354) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -74,6 +74,15 @@ ActiveRecord::Schema.define(:version => 20130417015103) do
     t.integer  "length"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "rounds", :force => true do |t|
+    t.integer  "activity_id"
+    t.integer  "tee_id"
+    t.string   "round_type"
+    t.integer  "strokes"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "tees", :force => true do |t|

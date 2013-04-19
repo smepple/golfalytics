@@ -26,6 +26,7 @@ class Tee < ActiveRecord::Base
 
   belongs_to :facility
   has_many :holes, dependent: :destroy
+  has_many :rounds
 
   validates_presence_of :facility_id, :name
 end
