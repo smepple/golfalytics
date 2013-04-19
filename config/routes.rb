@@ -8,6 +8,7 @@ Golfalytics::Application.routes.draw do
 
   resources :users
   resources :sessions
+  resources :activities
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -1,0 +1,22 @@
+%h1 New activity
+
+= form_for @activity do |f|
+  - if @activity.errors.any?
+    .error_messages
+      %h2 Form is invalid
+      %ul
+        - @activity.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :facility
+    - facility_options = Facility.all.map { |facility| ["#{Venue.find(facility.venue_id).name} #{':' if !facility.name.blank?} #{facility.name if !facility.name.blank?}", facility.id] }
+    = f.select :facility_id, facility_options
+  .field
+    = f.label :type
+    = f.select :type, ["Play", "Practice"]
+  .field
+    = f.label :date_completed
+    = f.date_select :date_completed
+  .actions
+    = f.submit "Save"
