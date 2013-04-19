@@ -1,3 +1,14 @@
 %h1 Home
 
 %p= link_to "Enter a new activity", new_activity_path
+
+%ul
+  - @user.activities.each do |activity|
+    %li
+      - facility = Facility.find(activity.facility_id)
+      - venue = Venue.find(facility.venue_id)
+      - if activity.activity_type == 'Play'
+        = "Played at"
+      - elsif activity.activity_type == 'Practice'
+        = "Practiced at"
+      = "#{venue.name} #{':' if !facility.name.blank?} #{facility.name if !facility.name.blank?} on #{activity.date_completed}"
